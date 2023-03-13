@@ -1,4 +1,6 @@
 
+import Link from "next/link";
+
 export const getStaticPaths = async () => {
     const res = await fetch('https://jsonplaceholder.typicode.com/users') ; 
     const data = await res.json() ; 
@@ -41,6 +43,12 @@ export default function Details ( {ninja} ) {
                      <h1 className="text-center text-2xl"> {ninja.name} </h1>
                      <p> { ninja.email }</p>
                      <p> { ninja.address.city }</p>
+
+                     <div className="mt-4">
+                         <Link className="bg-blue-600 px-4 py-2 text-center text-white rounded-full" href="/ninjas" >
+                             Retour &rarr; 
+                         </Link>
+                     </div>
                 </div>
                
             </h1>
