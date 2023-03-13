@@ -1,16 +1,18 @@
+import Link from "next/link";
+
 export default function NavBar ()  {
 
     return (
         <div>
-            <header aria-label="Site Header" class="shadow-sm">
+            <header aria-label="Site Header" className="shadow-sm">
             <div
-                class="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4"
+                className="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4"
             >
-                <div class="flex w-0 flex-1 lg:hidden">
-                <button class="rounded-full bg-gray-100 p-2 text-gray-600" type="button">
-                    <span class="sr-only">Account</span>
+                <div className="flex w-0 flex-1 lg:hidden">
+                <button className="rounded-full bg-gray-100 p-2 text-gray-600" type="button">
+                    <span className="sr-only">Account</span>
                     <svg
-                    class="h-5 w-5"
+                    className="h-5 w-5"
                     fill="none"
                     stroke="currentColor"
                     viewbox="0 0 24 24"
@@ -26,20 +28,20 @@ export default function NavBar ()  {
                 </button>
                 </div>
 
-                <div class="flex items-center gap-4">
+                <div className="flex items-center gap-4">
                 <a href="#">
-                    <span class="sr-only">Logo</span>
-                    <span class="h-10 w-20 rounded-lg bg-gray-200"></span>
+                    <span className="sr-only">Logo</span>
+                    <span className="h-10 w-20 rounded-lg bg-gray-200"></span>
                 </a>
 
                 
                 </div>
 
-                <div class="flex w-0 flex-1 justify-end lg:hidden">
-                <button class="rounded-full bg-gray-100 p-2 text-gray-500" type="button">
-                    <span class="sr-only">Menu</span>
+                <div className="flex w-0 flex-1 justify-end lg:hidden">
+                <button className="rounded-full bg-gray-100 p-2 text-gray-500" type="button">
+                    <span className="sr-only">Menu</span>
                     <svg
-                    class="h-5 w-5"
+                    className="h-5 w-5"
                     fill="currentColor"
                     viewbox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -55,24 +57,37 @@ export default function NavBar ()  {
 
                 <nav
                 aria-label="Site Nav"
-                class="hidden items-center justify-center gap-8   mb-2 text-sm font-medium lg:flex lg:w-0 lg:flex-1"
+                className="hidden items-center justify-center gap-8   mb-2 text-sm font-medium lg:flex lg:w-0 lg:flex-1"
                 >
-                <a class="text-gray-900 text-xl " >About</a>
-          
+
+                <Link  className="text-gray-900 text-xl " href="/">
+                     Home
+                </Link>
+                
+                <Link className="flex-shrink-0 pl-4 text-gray-900 text-xl " href='/about'>
+                    About
+                </Link>
                
-                <a class="text-gray-900 text-xl" >Ninjas</a>
+          
+               <Link className="text-gray-900 text-xl" href='/ninjas'>Ninjas</Link>
+                
                 </nav>
 
                
             </div>
 
-            <div class="border-t border-gray-100 lg:hidden">
+            <div className="border-t border-gray-100 lg:hidden">
                 <nav
-                class="flex items-center justify-center overflow-x-auto p-4 text-sm font-medium"
+                className="flex items-center justify-center overflow-x-auto p-4 text-sm font-medium"
                 >
-                <a class="flex-shrink-0 pl-4 text-gray-900 text-xl " >About</a>
+                <Link className="flex-shrink-0 pl-4 text-gray-900 text-xl " href="/about">
+                 About
+                </Link>
+              
+                <Link className="flex-shrink-0 pl-4 text-gray-900 text-xl"  href="/">
+                  Home
+                </Link>
                 
-                <a class="flex-shrink-0 pl-4 text-gray-900 text-xl" >Contact</a>
                 </nav>
             </div>
             </header>
